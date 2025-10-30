@@ -1,4 +1,4 @@
-'Count the number of employees in each department.'
+--'Count the number of employees in each department.'
 
 
 select department,count(employeeId)

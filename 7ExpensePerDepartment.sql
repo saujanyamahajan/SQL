@@ -12,3 +12,11 @@ select department,count(employeeid) as totalEmployees
 from employees
 group by department
 having count(employeeid)>5
+
+
+
+--Get the total salary expense per department
+SELECT department,SUM(salary) AS totalSalary
+FROM employee
+group BY departmenT
+

@@ -11,3 +11,4 @@ group by department
 select department,count(employeeid) as totalEmployees
 from employees
 group by department
+having count(employeeid)>5

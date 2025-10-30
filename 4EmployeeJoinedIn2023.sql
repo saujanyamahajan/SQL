@@ -7,3 +7,6 @@ where year(joiningDate)=2025
 
 select * from employee
 where cast(joiningDate as date)>= cast( dateadd(date,-90,getDate()) as date )
+
+
+DATEADD(datepart, number, date)

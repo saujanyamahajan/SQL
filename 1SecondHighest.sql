@@ -19,14 +19,15 @@ select * from employees where salary > (select avg(salary) from employees)
 ---3rd highest salary using DENSE_RANK() or ROW_NUMBER()
 create table #DENSE_RANK
 {
-empId int;
-name varchar(50);
-department varchar(50)
-salary int;
+empId int,
+name varchar(50),
+department varchar(50),
+salary int,
+rank int
 }
 
 insert into #rank(empId,name,department,salary)
-(select employeeid,name,department,salary 
+(select employeeid,name,department,salary,
 DENSE_RANK() over (order by salary desc)
 from employee  )
 SELECT* from #rank

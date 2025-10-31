@@ -12,3 +12,5 @@ from employee
 group by department)b
 on a.department=b.department and a.salary=b.maxSalary
 
+
+

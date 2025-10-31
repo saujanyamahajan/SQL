@@ -29,3 +29,5 @@ insert into #rank(empId,name,department,salary)
 (select employeeid,name,department,salary 
 DENSE_RANK() over (order by salary desc)
 from employee  )
+SELECT* from #rank
+where rank=3

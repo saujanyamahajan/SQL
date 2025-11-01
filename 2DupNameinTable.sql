@@ -43,3 +43,10 @@ from employee)
 delete from employee where id in (select id from #temp where rank>1)
 
 drop table #temp
+
+
+
+
+--ROW_NUMBER() OVER (PARTITION BY col1, col2, col3 ORDER BY id) groups records by values of col1, col2, and col3. It assigns:
+--rn = 1 to the first row in each group
+--rn > 1 to duplicates

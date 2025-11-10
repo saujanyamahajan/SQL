@@ -14,3 +14,20 @@ on a.department=b.department and a.salary=b.maxSalary
 
 
 
+-- Overall Running Total
+SELECT 
+    id,
+    name,
+    salary,
+    SUM(salary) OVER (ORDER BY id) AS running_total
+FROM employee;
+
+--Department-wise Running Total
+SELECT 
+    id,
+    name,
+    department,
+    salary,
+    SUM(salary) OVER (PARTITION BY department ORDER BY id) AS dept_running_total
+FROM employee;
+

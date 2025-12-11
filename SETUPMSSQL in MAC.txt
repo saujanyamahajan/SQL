@@ -1,0 +1,10 @@
+install docker
+install azure data studio
+run the following command in terminal
+docker run -e "ACCEPT_EULA=1" -e "MSSQL_SA_PASSWORD=CodeWithArjun123" -e "MSSQL_PID=Developer" -e "MSSQL_USER=SA" -p 1433:1433 -d --name=sql mcr.microsoft.com/azure-sql-edge
+
+
+in azure data studio
+crete a new connection with adding the user name pwd provided in above command
+
+now you are connected to db perform your operations

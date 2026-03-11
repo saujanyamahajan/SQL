@@ -19,11 +19,12 @@ SELECT * FROM FOOTER;
 
 
 
-select * from 
-(select car from footer where car is not null order by 1 desc limit 1) as car
-cross join
-(select length from footer where length is not null order by 1 desc limit 1) as length
-cross join
-(select width from footer where width is not null order by 1 desc limit 1) as width
-cross join
-(select height from footer where height is not null order by 1 desc limit 1) as height
+SELECT *
+FROM
+(SELECT TOP 1 car FROM footer WHERE car IS NOT NULL ORDER BY id DESC) car
+CROSS JOIN
+(SELECT TOP 1 length FROM footer WHERE length IS NOT NULL ORDER BY id DESC) length
+CROSS JOIN
+(SELECT TOP 1 width FROM footer WHERE width IS NOT NULL ORDER BY id DESC) width
+CROSS JOIN
+(SELECT TOP 1 height FROM footer WHERE height IS NOT NULL ORDER BY id DESC) height;

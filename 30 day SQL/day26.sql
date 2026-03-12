@@ -24,3 +24,12 @@ insert into tokens values(5, 'Shane');
 
 select * from tokens;
 
+
+
+
+select  top 1 token_num 
+from 
+(select distinct * from tokens) t
+group by token_num
+having count(token_num)=1
+order by token_num ASC

@@ -37,3 +37,12 @@ insert into feedback values(13, 'Abrar', 'abrar123@gmail.comm', 5, 'awesome');
 select * from feedback;
 
 
+
+select cust_name,email
+from feedback
+where
+-- email like '[a-zA-Z]%@[a-zA-Z]%[a-zA-Z]%'
+ email LIKE '[a-zA-Z][a-zA-Z0-9_.-]%@[a-zA-Z]%.[a-zA-Z][a-zA-Z][a-zA-Z]'
+and CHARINDEX('.',reverse(email)) BETWEEN 3 and 4
+AND email NOT LIKE '%#%'
+

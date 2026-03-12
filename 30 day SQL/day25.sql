@@ -15,3 +15,9 @@ insert into product_demo values (3, 'samsung - Galaxy Phone', 'mapple MacBook Pr
 
 select * from product_demo;
 
+select store_id,
+sum(case when LTRIM(lower(product_1)) like 'apple%' then 1 else 0 end) AS product1_apple,
+SUM( case when LTRIM(lower(product_2)) like 'apple%' then 1 else 0 END) AS product2_apple
+from product_demo
+group by store_id
+order by store_id

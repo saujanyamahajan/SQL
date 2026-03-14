@@ -17,3 +17,13 @@ INSERT INTO orders VALUES
 
 
 select * from orders;
+
+
+SELECT *
+FROM
+(
+    SELECT *,
+           LAG(marks,1,0) OVER (ORDER BY test_id) AS prev_test
+    FROM student_tests
+) AS x
+WHERE x.marks > x.prev_test;

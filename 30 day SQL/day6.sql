@@ -14,3 +14,20 @@ insert into student_tests values(105, 50);
 select * from student_tests;
 
 
+-- single products
+SELECT dates,
+       CAST(product_id AS VARCHAR) AS products
+FROM orders
+
+UNION
+
+-- product combinations
+SELECT a.dates,
+       CONCAT(a.product_id, ',', b.product_id) AS products
+FROM orders a
+JOIN orders b
+ON a.customer_id = b.customer_id
+AND a.dates = b.dates
+AND a.product_id < b.product_id
+
+ORDER BY dates, products;

@@ -12,3 +12,5 @@ insert into student_tests values(104, 40);
 insert into student_tests values(105, 50);
 
 select * from student_tests;
+
+

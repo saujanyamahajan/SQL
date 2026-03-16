@@ -24,3 +24,18 @@ insert into employee_managers values (14, 'Lorraine', 15);
 insert into employee_managers values (15, 'Larry', 1);
 
 select * from employee_managers;
+
+
+
+
+SELECT * 
+from employee_managers
+
+
+
+select b.name as manager, count(a.name) as no_of_emp
+from employee_managers A
+ join employee_managers b
+on a.manager=b.id
+GROUP by b.name
+order by no_of_emp desc
